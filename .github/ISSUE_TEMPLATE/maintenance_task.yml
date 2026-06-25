@@ -1,0 +1,48 @@
+name: Maintenance task
+description: Track maintenance work with risk, reason, and verification up front.
+title: "[Maintenance]: "
+labels: ["maintenance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for upkeep, dependency hygiene, repo cleanup, release prep, and operational hardening.
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+      description: What needs to change?
+    validations:
+      required: true
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk level
+      description: How much can this break if done poorly?
+      options:
+        - Low
+        - Medium
+        - High
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: What problem does this prevent, unblock, or make easier to operate?
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification
+      description: What checks, tests, readbacks, or manual proof will show this is done?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Optional boundaries, files, systems, or workflows this should and should not touch.
+    validations:
+      required: false
