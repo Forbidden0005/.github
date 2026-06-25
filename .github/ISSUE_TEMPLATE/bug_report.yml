@@ -1,0 +1,60 @@
+name: Bug report
+description: Report a reproducible defect without exposing secrets or exploit details.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for reproducible defects. Do not include secrets, tokens, private data, or exploit details.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What broke, and what impact does it have?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: List the smallest reliable sequence that triggers the issue.
+      placeholder: |
+        1. Start from...
+        2. Run...
+        3. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead? Include exact errors when safe.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, runtime, versions, branch, commit, config shape, or deployment context.
+      placeholder: |
+        OS:
+        Version or commit:
+        Runtime/tooling:
+        Relevant config:
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Optional logs, screenshots, traces, or links. Redact secrets and private data.
+    validations:
+      required: false
